@@ -1,28 +1,30 @@
-html,
-body {
-	height: 100%;
+html {
+    box-sizing: border-box;
 }
-
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
-
-.main {
-	flex: 1 0 auto;
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: $text;
 }
-.footer {
-	flex: 0 0 auto;
+ul,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
-
+body{
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $text;
+}
 .container{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
-
-
-
-
-
