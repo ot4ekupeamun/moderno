@@ -281,9 +281,9 @@
         .advantages__item-title {
             color: $green;
         }
-        .advantages__item-images{
-            svg{
-                fill:#fff;
+        .advantages__item-images {
+            svg {
+                fill: #fff;
             }
         }
     }
@@ -326,5 +326,43 @@
     svg {
         width: 90px;
         height: 90px;
+    }
+}
+
+// START AUTHOR
+
+.author {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    &__box {
+        max-width: 650px;
+        min-height: 215px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $green;
+    }
+    &__title {
+        font-size: 30px;
+        line-height: 30px;
+        color: #fff;
+        margin-right: 45px;
+        max-width: 262px;
+        span {
+            @include f700;
+        }
+    }
+    &__link {
+        font-size: 18px;
+        line-height: 36px;
+        padding: 14px 40px;
+        background-color: #fff;
     }
 }
