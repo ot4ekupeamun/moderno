@@ -43,7 +43,8 @@ function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js',
-    'node_modules/mixitup/dist/mixitup.js',         //плагин для микса элементов
+    'node_modules/mixitup/dist/mixitup.js',        //плагин для микса элементов
+    'node_modules/rateyo/min/jquery.rateyo.min.js',        
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
@@ -56,6 +57,7 @@ function libscss() {
   return src([
     'node_modules/slick-carousel/slick/slick.css',
     'node_modules/normalize.css/normalize.css',
+    'node_modules/rateyo/min/jquery.rateyo.min.css',
   ])
     .pipe(concat('_libs.scss'))
     .pipe(cssmin())
