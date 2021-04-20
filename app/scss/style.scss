@@ -203,14 +203,14 @@
     margin-top: 54px;
     margin-left: 15px;
     &:hover {
-        .header__circle::before{
+        .header__circle::before {
             color: $bg;
         }
         .circle__menu {
             overflow: hidden;
             height: auto;
         }
-        .circle__item{
+        .circle__item {
             padding: 23px;
             border-width: 1px;
         }
@@ -228,7 +228,7 @@
     align-items: center;
     width: 269px;
     position: relative;
-    &::before{
+    &::before {
         position: absolute;
         top: 27px;
         right: 28px;
@@ -253,8 +253,8 @@
     color: #000;
     font-size: 16px;
 }
-.circle__info-date{
-    color:#707070;
+.circle__info-date {
+    color: #707070;
     font-size: 10px;
 }
 .basket__summ {
@@ -288,21 +288,117 @@
     background-color: $red;
 }
 .notification__menu,
-.message__menu{
-    .circle__images{
+.message__menu {
+    .circle__images {
         margin-right: 20px;
         width: 48px;
         height: 48px;
         border-radius: 50%;
     }
-    .circle__info{
+    .circle__info {
         line-height: 20px;
     }
 }
-.icons-color::before{
+.icons-color::before {
     color: $tomato;
 }
 
+// START HEADER POPAP
+
+#trueModal {
+    background-color: $green;
+    max-width: 730px;
+    width: 100%;
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+.login__title {
+    text-transform: uppercase;
+    font-size: 48px;
+    color: #fff;
+    @include f700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.login__wrapper {
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    label {
+        position: relative;
+        display: block;
+        width: 100%;
+        &::before {
+            position: absolute;
+            font-family: "icomoon";
+            font-size: 14px;
+            color: #fff;
+            left: 18px;
+            top: 9px;
+        }
+    }
+    .login__label-name::before {
+        content: "\f007";
+    }
+    .login__label-pass::before {
+        content: "\f023";
+    }
+    input {
+        height: 43px;
+        margin-bottom: 8px;
+        border: none;
+        background-color: #76ae36;
+        color: #fff;
+        font-size: 14px;
+        padding-left: 40px;
+        display: block;
+        width: 100%;
+        &::placeholder {
+            color: #fff;
+            font-size: 14px;
+        }
+    }
+    button {
+        margin-top: 19px;
+        padding: 18px 0 16px;
+        width: 140px;
+        background-color: #fff;
+        text-transform: uppercase;
+        border: none;
+        margin-right: 10px;
+        @include f700;
+        color: #000;
+        text-align: center;
+        box-shadow: 0px 2px 2px 0px rgba(118, 174, 54, 0.75);
+    }
+}
+.lost-pass {
+    display: block;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 18px;
+}
+.create-acc {
+    margin-top: 19px;
+    padding: 15px 0 15px 28px;
+    text-align: center;
+    width: 245px;
+    background-color:#76ae36;
+    color:#fff;
+    font-size: 18px;
+    position:relative;
+    &::before{
+        content:'\f044';
+        position:absolute;
+        top: 15px;
+        left: 35px;
+        font-family: "icomoon";
+    }
+}
+.fancybox-button svg path{
+    color:#fff;
+}
 // START SEARCH
 
 .search {
