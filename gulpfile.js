@@ -8,6 +8,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const cssmin = require('gulp-cssmin');
+const rename = require('gulp-rename');
+
 
 function browsersync() {
   browserSync.init({
@@ -69,6 +71,7 @@ function libscss() {
 function styles() {
   return src('app/scss/**/*.scss')
     .pipe(scss({ outputStyle: 'compressed' }))
+    .pipe(rename({suffix : '.min'}))
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 version'],
@@ -77,6 +80,15 @@ function styles() {
     .pipe(dest('app/css'))
     .pipe(browserSync.stream())
 }
+function html(){
+  return src('app/*.html')
+  .pipe(browserSync.stream())
+}
+function js(){
+  return src('app/js/*.js')
+  .pipe(browserSync.stream())
+}
+
 
 function build() {
   return src([
@@ -90,9 +102,11 @@ function build() {
 
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
-  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-  watch(['app/*.html']).on('change', browserSync.reload);
+  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts, js);
+  watch(['app/*.html']).on('change', browserSync.reload, html);
 }
+
+
 
 exports.styles = styles;
 exports.watching = watching;
@@ -104,6 +118,6 @@ exports.libscss = libscss;
 
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(libscss, styles, scripts, browsersync, watching);
+exports.default = parallel(js,html,libscss, styles, scripts, browsersync, watching);
 
 
