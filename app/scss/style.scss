@@ -415,6 +415,15 @@
     background-size: cover;
     background-position: center;
     min-height: 533px;
+    &.page-search {
+        min-height: 230px;
+        .search__inner {
+            padding: 55px 0 70px;
+            &-text {
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
 .search__inner {
     padding: 155px 0 100px; //на случай расширения контента резервация пространства
@@ -1229,8 +1238,86 @@
 
 // END PRODUCT-DETAILS PAGE
 
+// START PAGE 404
 
+.page-404__wrapper,
+.about__wrapper {
+    border: 1px solid #dcdcdc;
+    background-color: #fff;
+    margin-bottom: 150px;
+}
+.page-404__head,
+.about__head {
+    font-size: 24px;
+    color: #444;
+    padding: 23px 27px;
+    @include f500;
+    border-bottom: 1px solid #dcdcdc;
+}
+.page-404__inner {
+    text-align: center;
+    background-color: $green;
+    color: #fff;
+}
+.page-404__404 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    font-size: 300px;
+    line-height: 300px;
+    color: #fff;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        background-image: url(../images/page-404.png);
+        width: 150px;
+        height: 292px;
+        margin-left: 20px;
+    }
+}
+.page-404__title {
+    margin-bottom: 30px;
+    @include f300;
+    font-size: 30px;
+}
+.page-404__text {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+.page-404__link {
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 20px 30px 16px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    margin-bottom: 100px;
+}
+//  END PAGE 404
 
+//  START ABOUT
+
+.about__inner {
+    padding: 0 50px;
+}
+.about__box {
+    h3 {
+        font-size: 20px;
+        @include f700;
+        color: #444;
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+    p {
+        margin-bottom: 40px;
+    }
+}
+
+//  END ABOUT
 
 //  START NEW-ITEMS PAGE
 .product-page__inner {
@@ -1585,9 +1672,6 @@ button.icon-unsorted {
     }
 }
 
-
 // END NEW-ITEMS PAGE
-
-
 
 @import "media";
