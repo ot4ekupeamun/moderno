@@ -8,7 +8,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const cssmin = require('gulp-cssmin');
-const rename = require('gulp-rename');
+
 
 
 function browsersync() {
@@ -47,6 +47,7 @@ function scripts() {
     'node_modules/slick-carousel/slick/slick.js',
     'node_modules/mixitup/dist/mixitup.js',        //плагин для микса элементов
     'node_modules/rateyo/min/jquery.rateyo.min.js',
+    'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
@@ -60,6 +61,7 @@ function libscss() {
     'node_modules/slick-carousel/slick/slick.css',
     'node_modules/normalize.css/normalize.css',
     'node_modules/rateyo/min/jquery.rateyo.min.css',
+    'node_modules/ion-rangeslider/css/ion.rangeSlider.css',
   ])
     .pipe(concat('_libs.scss'))
     .pipe(cssmin())
@@ -71,7 +73,6 @@ function libscss() {
 function styles() {
   return src('app/scss/**/*.scss')
     .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(rename({suffix : '.min'}))
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 version'],
@@ -80,15 +81,6 @@ function styles() {
     .pipe(dest('app/css'))
     .pipe(browserSync.stream())
 }
-function html(){
-  return src('app/*.html')
-  .pipe(browserSync.stream())
-}
-function js(){
-  return src('app/js/*.js')
-  .pipe(browserSync.stream())
-}
-
 
 function build() {
   return src([
@@ -102,8 +94,8 @@ function build() {
 
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
-  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts, js);
-  watch(['app/*.html']).on('change', browserSync.reload, html);
+  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+  watch(['app/*.html']).on('change', browserSync.reload);
 }
 
 
@@ -118,6 +110,6 @@ exports.libscss = libscss;
 
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(js,html,libscss, styles, scripts, browsersync, watching);
+exports.default = parallel(libscss, styles, scripts, browsersync, watching);
 
 
