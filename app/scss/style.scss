@@ -1431,7 +1431,7 @@
 //  END CONTACT
 
 //  START SETTINGS
-.settings{
+.settings {
     padding-bottom: 100px;
 }
 .product-one__tabs.settings__tabs {
@@ -1450,12 +1450,12 @@
             border-bottom: #dedede;
             background-color: #fff;
             padding: 17px 17px 17px 50px;
-            color:#707070;
+            color: #707070;
             font-size: 14px;
             @include f500;
             &.active {
                 border-bottom: 1px solid $green;
-                color:#37474f;
+                color: #37474f;
                 &::before {
                     color: $green;
                 }
@@ -1472,54 +1472,244 @@
     .tab__content {
         width: 100%;
         padding: 0;
-        border:none;
+        border: none;
         background-color: transparent;
     }
 }
-.page-box{
+.page-box {
     background-color: #fff;
-    border:1px solid #dedede;
+    border: 1px solid #dedede;
     min-height: 100%;
 }
-.page-box__title{
+.page-box__title {
     border-bottom: 1px solid #dedede;
     padding: 18px 34px;
-    color:$bg;
+    color: $bg;
     font-size: 24px;
     @include f500;
 }
-.page-box__content{
+.page-box__content {
     padding: 30px 35px 80px;
 }
-.setting__line{
+.setting__line {
     margin-bottom: 21px;
-    display:flex;
+    display: flex;
     align-items: center;
-    label{
-        color:#444;
-        width:260px
+    label {
+        color: #444;
+        width: 260px;
     }
-    input{
+    input {
         max-width: 540px;
         width: 100%;
         height: 40px;
-        color:#000;
+        color: #000;
         background-color: #f9f9f9;
-        border: 1px solid #dedede; 
+        border: 1px solid #dedede;
         padding: 0 10px;
     }
-    select{
+    select {
         max-width: 540px;
         width: 100%;
         height: 40px;
-        color:#000;
+        color: #000;
         background-color: #f9f9f9;
-        border: 1px solid #dedede; 
+        border: 1px solid #dedede;
         padding: 0 10px;
-        color:#707070;
+        color: #707070;
     }
 }
 //  END SETTINGS
+
+// START PROFILE
+.profile__inner {
+    display: flex;
+    margin-bottom: 30px;
+}
+.profile__aside {
+    margin-right: 30px;
+    max-width: 270px;
+    width: 100%;
+    & .footer__social-link {
+        margin-bottom: 30px;
+    }
+}
+.profile__content {
+    width: 100%;
+}
+.profile-status {
+    color: #707070;
+    font-size: 13px;
+    padding: 6px 9px 5px 30px;
+    border: 1px solid #d5d5d5;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        left: 11px;
+        top: 13px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+    }
+}
+.profile-on {
+    &::before {
+        background-color: $green;
+    }
+}
+.profile-off {
+    &::before {
+        background-color: $red;
+    }
+}
+.profile__aside-btn {
+    margin-bottom: 13px;
+    text-align: center;
+}
+.profile__aside-message {
+    margin-bottom: 17px;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    @include f500;
+    padding: 18px 10px;
+    position: relative;
+    background-color: $text;
+    color: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+    &::before {
+        content: "\f003";
+        font-family: "icomoon";
+        position: absolute;
+        left: 50px;
+        top: 17px;
+    }
+}
+.profile__aside-folowing {
+    margin-bottom: 17px;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    @include f700;
+    background-color: $green;
+    padding: 18px 10px;
+    position: relative;
+    color: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+}
+.profile__banner {
+    padding: 20px;
+    border: 1px solid #dedede;
+    background-color: #fff;
+    margin-bottom: 35px;
+}
+.profile__banner-images {
+    background-image: url(../images/content/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 332px;
+}
+.profile__items {
+    display: flex;
+    border: 1px solid #dedede;
+}
+.profile__item {
+    width: 25%;
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 5px 17px;
+    & + .profile__item {
+        border-left: 1px solid #dedede;
+    }
+}
+.profile__item-title {
+    font-size: 14px;
+    color: $bg;
+    @include f500;
+}
+.profile__item-content {
+    font-size: 14px;
+    color: #707070;
+    @include f500;
+    .rate-star {
+        display: inline-block;
+    }
+    &.profile__item-sales {
+        color: $bg;
+    }
+}
+.profile-settings {
+    .product-one__tabs.settings__tabs{
+        .tabs span {
+            font-weight: 500;
+            font-family: "Roboto", sans-serif !important;
+            color:#707070;
+            position: relative;
+            &.active::before{
+                color:$green;
+            }
+            &::before{
+                top: 15px;
+                font-family: "icomoon";
+                position: absolute;
+                left: 24px;
+                color: #d0d0d0;
+                font-size: 14px;
+            }
+        }
+    }
+}
+.personal-box {
+    background-color: #fff;
+    padding: 35px 40px 25px;
+    border: 1px solid #dedede;
+}
+.personal-box__title {
+    margin-bottom: 25px;
+    @include f700;
+    color: $bg;
+    font-size: 20px;
+}
+.personal-box__text {
+    margin-bottom: 20px;
+    p {
+        color: #707070;
+    }
+}
+.personal-box__item-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.personal-box__item-name {
+    @include f500;
+    font-size: 16px;
+    color: $bg;
+    font-style: italic;
+}
+.personal-box__item-number {
+    @include f700;
+    font-size: 16px;
+    color: $bg;
+}
+.personal-box__item-line {
+    height: 15px;
+    background-color: #f4f4f4;
+    border-radius: 3px;
+    margin-bottom: 23px;
+    span {
+        display: block;
+        height: 15px;
+        border-radius: 3px;
+        background-color: $green;
+        background-image: url(../images/pro-bar.jpg);
+        background-repeat: repeat;
+    }
+}
+
+// END PROFILE
 
 //  START NEW-ITEMS PAGE
 .product-page__inner {
