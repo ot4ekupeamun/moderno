@@ -48,6 +48,7 @@ function scripts() {
     'node_modules/mixitup/dist/mixitup.js',        //плагин для микса элементов
     'node_modules/rateyo/min/jquery.rateyo.min.js',
     'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
@@ -62,6 +63,8 @@ function libscss() {
     'node_modules/normalize.css/normalize.css',
     'node_modules/rateyo/min/jquery.rateyo.min.css',
     'node_modules/ion-rangeslider/css/ion.rangeSlider.css',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.css',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css'
   ])
     .pipe(concat('_libs.scss'))
     .pipe(cssmin())

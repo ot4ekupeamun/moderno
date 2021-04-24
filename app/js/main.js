@@ -15,6 +15,11 @@ $(function () {
     });
 
 
+
+    $('input[type="file"], select').styler();
+
+
+    
     $(".js-range-slider").ionRangeSlider({
         type: "double",
         min: 0,
