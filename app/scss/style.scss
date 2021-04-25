@@ -1750,9 +1750,6 @@
         span {
             color: $green;
         }
-        &::placeholder {
-            color: #070707;
-        }
     }
     select,
     input,
@@ -1763,6 +1760,9 @@
         height: 40px;
         background-color: #f9f9f9;
         padding: 0 18px;
+        &::placeholder {
+            color: #070707;
+        }
     }
     textarea {
         resize: none;
@@ -1848,10 +1848,173 @@
 
 //  END UPLOAD
 
+
 //START WITHDRAWALS
+.withdrawals__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 110px;
+}
+.withdrawals__col {
+    max-width: 570px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    height: 100%;
+}
+.withdrawals__title {
+    font-size: 24px;
+    padding: 18px 32px 24px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 30px;
+    color: $bg;
+    @include f500;
+}
+.withdrawals__content {
+    padding-left: 35px;
+    padding-right: 40px;
+    button {
+        margin-bottom: 50px;
+        color: #fff;
+        background-color: $green;
+        border: none;
+        padding: 15px 36px;
+        cursor: pointer;
+    }
+}
+.withdrawals__form-line {
+    margin-bottom: 25px;
+    label {
+        display: block;
+        width: 100%;
+        font-size: 16px;
+        @include f500;
+        margin-bottom: 15px;
+        color: $bg;
+        span {
+            color: $green;
+        }
+    }
+    input,
+    select {
+        width: 100%;
+        display: block;
+        border: 1px solid #d7d7d7;
+        height: 40px;
+        background-color: #f9f9f9;
+        padding: 0 18px;
+        &::placeholder {
+            color: #070707;
+        }
+    }
+    .jq-selectbox {
+        width: 100%;
+    }
+    .jq-selectbox__select {
+        height: 40px;
+        padding: 0 18px;
+        border: 1px solid #d7d7d7;
+        border-bottom-color: #d7d7d7;
+        border-radius: 0;
+        background: #f9f9f9;
+        background: -o-linear-gradient(#fff, #e6e6e6);
+        box-shadow: none;
+        font: "Roboto-Regular", sans-serif;
+        color: #070707;
+        text-shadow: none;
+        line-height: 40px;
+    }
+    .jq-selectbox__trigger-arrow {
+        border: none;
+        top: 0;
+        right: 20px;
+        line-height: 40px;
+        font-size: 15px;
+        &::before {
+            font-family: "icomoon";
+            content: "\f0d7";
+            position: absolute;
+        }
+    }
+    .jq-selectbox__trigger {
+        border-left: none;
+    }
+    .jq-file {
+        box-shadow: none;
+        width: 100%;
+        border-radius: 0px;
+        border: 1px solid #d7d7d7;
+        height: 40px;
+        background-color: #f9f9f9;
+    }
+    .jq-file__name {
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        padding: 0 18px;
+        border: none;
+        border-bottom-color: transparent;
+        border-radius: 0px;
+        background: transparent;
+        box-shadow: none;
+        line-height: 40px;
+        font-size: 12px;
+        color: #707070;
+        margin-left: 100px;
+    }
+    .jq-file__browse {
+        position: absolute;
+        top: 5px;
+        right: auto;
+        left: 9px;
+        padding: 0 12px;
+        border: 1px solid #d7d7d7;
+        border-left: 1px solid #d7d7d7;
+        border-radius: 0px;
+        background: #fff;
+        box-shadow: none;
+        text-shadow: none;
+        font-size: 12px;
+        line-height: 26px;
+        color: #444;
+    }
+}
+.withdrawals__content-items{
+    padding-bottom: 35px;
+}
+.withdrawals__content-item{
+    display:flex;
+    height: 42px;
+    align-items: center;
+    font-size: 13px;
+    color:#444;
+    &:nth-child(odd){
+        background-color: #f9f9f9;
+    }
+}
+.withdrawals__contens-date{
+    width: 154px;
+    padding-left: 20px;
+    @include f500;
+}
+.withdrawals__contens-email{
+    width: 180px;
+    @include f500;
+}
+.withdrawals__contens-price{
+    width: 70px;
+    @include f700;
+}
+.withdrawals__contens-status{
+    width: 80px;
+    @include f700;
+    &.withdrawals__contens-paid{
+        color:$green;
+    }
 
-
+}
 //END WITHDRAWALS
+
 
 //  START NEW-ITEMS PAGE
 .product-page__inner {
