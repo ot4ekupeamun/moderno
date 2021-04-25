@@ -7,7 +7,7 @@ const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
-const cssmin = require('gulp-cssmin');
+
 
 
 
@@ -67,7 +67,6 @@ function libscss() {
     'node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css'
   ])
     .pipe(concat('_libs.scss'))
-    .pipe(cssmin())
     .pipe(dest('app/scss'))
 }
 
